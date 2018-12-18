@@ -1,8 +1,22 @@
 <resources>
-    <string name="app_name">FooBarNotes</string>
-    <string name="resetButton">C</string>
-    <string name="divButton">\u00f7</string>
-    <string name="plusButton">\u002b</string>
-    <string name="minusButton">\u2212</string>
-    <string name="nulButton">\u00d7</string>
+    <string name="app_name">Calc</string>
+    <string name="buttonBackspace">\u232b</string>
+    <string name="buttonReset">C</string>
+    <string name="buttonDivide">\u00f7</string>
+    <string name="buttonPlus">\u002b</string>
+    <string name="buttonMinus">\u2212</string>
+    <string name="buttonMultiplication">\u00d7</string>
+    <string name="button0">0</string>
+    <string name="button1">1</string>
+    <string name="button2">2</string>
+    <string name="button3">3</string>
+    <string name="button4">4</string>
+    <string name="button5">5</string>
+    <string name="button6">6</string>
+    <string name="button7">7</string>
+    <string name="button8">8</string>
+    <string name="button9">9</string>
+    <string name="buttonPercent">\u0025</string>
+    <string name="buttonPoint">\u201a</string>
+    <string name="buttonEqual">\u003d</string>
 </resources>
