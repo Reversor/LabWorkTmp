@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FooBarNotes</string>
+    <string name="resetButton">C</string>
+    <string name="divButton">\u00f7</string>
+    <string name="plusButton">\u002b</string>
+    <string name="minusButton">\u2212</string>
+    <string name="nulButton">\u00d7</string>
+</resources>
