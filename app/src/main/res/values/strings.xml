@@ -19,4 +19,5 @@
     <string name="buttonPercent">\u0025</string>
     <string name="buttonPoint">\u201a</string>
     <string name="buttonEqual">\u003d</string>
+    <string name="buttonRevers">\u00b1</string>
 </resources>
