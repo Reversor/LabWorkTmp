@@ -2,19 +2,27 @@ package foobar.reversor.ru.foobarnotes
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.text.Editable
+import android.view.View
+import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+
+    val editable: Editable = findViewById<TextView>(R.id.text_result).editableText;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+//        findViewById<Button>(R.id.button_0).setOnClickListener()
     }
 
-    override fun onResume() {
-        super.onResume()
+    fun percent(view: View) {
+
     }
 
-    override fun onPause() {
-        super.onPause()
+    fun symbolHandler(view: View) {
+        editable.append((view as TextView).text)
     }
 }
