@@ -16,8 +16,8 @@
     <string name="button7">7</string>
     <string name="button8">8</string>
     <string name="button9">9</string>
-    <string name="buttonPercent">\u0025</string>
-    <string name="buttonPoint">\u201a</string>
+    <string name="buttonPlusMinus">\u00b1</string>
+    <string name="buttonPoint">.</string>
     <string name="buttonEqual">\u003d</string>
     <string name="buttonRevers">\u00b1</string>
 </resources>
