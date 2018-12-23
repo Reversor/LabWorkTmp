@@ -6,6 +6,15 @@ import android.text.Editable
 import android.view.View
 import android.widget.EditText
 import android.widget.TextView
+import com.udojava.evalex.AbstractOperator
+import com.udojava.evalex.Expression
+import com.udojava.evalex.Operator
+import foobar.reversor.ru.foobarnotes.operators.Divide
+import foobar.reversor.ru.foobarnotes.operators.Minus
+import foobar.reversor.ru.foobarnotes.operators.Multiply
+import foobar.reversor.ru.foobarnotes.operators.Plus
+import java.math.BigDecimal
+import java.math.MathContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -40,23 +49,7 @@ class MainActivity : AppCompatActivity() {
         value = 0.0
     }
 
-    fun symbolHandler(view: View) {
-        input.append((view as TextView).text)
-    }
-
-    fun point(view: View) {
-        if (input.indexOf('.') < 0) {
-            symbolHandler(view)
-        }
-    }
-
-    fun plus(view: View) {
-        doOperation { d1, d2 -> d1 + d2 }
-    }
-
-    fun minus(view: View) {
-        doOperation { d1, d2 -> d1 - d2 }
-    }
+    fun symbolHandler(view: View): Editable = input.append((view as TextView).text)
 
     fun backspace(view: View) {
         val length = input.length
@@ -64,16 +57,23 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun result(view: View) {
-        input.clear()
         result.clear()
-        result.append(value.toString())
+        result.append(evaluate(input.toString()).toString())
+        input.clear()
     }
 
-    fun doOperation(operation: (Double, Double) -> Double) {
-        if (input.isNotEmpty()) {
-            value = operation.invoke(value, input.toString().toDouble())
-            result.clear()
-            result.append(value.toString())
+    fun evaluate(expression: String): BigDecimal {
+        val evaluationalExpression = Expression(expression, MathContext.DECIMAL64)
+        evaluationalExpression.addOperator(Divide())
+        evaluationalExpression.addOperator(Multiply())
+        evaluationalExpression.addOperator(Minus())
+        evaluationalExpression.addOperator(Plus())
+        try {
+            val bigDecimal = evaluationalExpression.eval()
+            return bigDecimal
+        } catch (e: Expression.ExpressionException) {
+            return BigDecimal.ZERO
         }
     }
+
 }

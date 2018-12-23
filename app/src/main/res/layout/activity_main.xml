@@ -14,14 +14,13 @@
     tools:context=".MainActivity">
 
     <EditText
-        android:id="@+id/text_result"
+        android:id="@+id/text_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/background_light"
         android:focusableInTouchMode="false"
-        android:gravity="end|bottom"
+        android:gravity="end|center_vertical"
         android:inputType="none"
-        android:padding="5dp"
         android:textIsSelectable="false"
         android:textSize="32sp"
         app:layout_column="0"
@@ -30,16 +29,16 @@
         app:layout_rowWeight="1" />
 
     <EditText
-        android:id="@+id/text_input"
+        android:id="@+id/text_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/background_light"
         android:focusableInTouchMode="false"
-        android:gravity="end|bottom"
+        android:gravity="end"
         android:inputType="none"
-        android:padding="5dp"
+        android:textColor="@android:color/darker_gray"
         android:textIsSelectable="false"
-        android:textSize="32sp"
+        android:textSize="24sp"
         app:layout_column="0"
         app:layout_columnSpan="4"
         app:layout_row="1"
@@ -60,6 +59,7 @@
     <Button
         android:id="@+id/button_div"
         style="?android:buttonBarButtonStyle"
+        android:onClick="symbolHandler"
         android:text="@string/buttonDivide"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="32sp"
@@ -71,6 +71,7 @@
     <Button
         android:id="@+id/button_mul"
         style="?android:buttonBarButtonStyle"
+        android:onClick="symbolHandler"
         android:text="@string/buttonMultiplication"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="32sp"
@@ -133,7 +134,7 @@
     <Button
         android:id="@+id/button_minus"
         style="?android:buttonBarButtonStyle"
-        android:onClick="minus"
+        android:onClick="symbolHandler"
         android:text="@string/buttonMinus"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="32sp"
@@ -185,7 +186,7 @@
         android:id="@+id/button_plus"
         style="?android:buttonBarButtonStyle"
         android:layout_weight="1"
-        android:onClick="plus"
+        android:onClick="symbolHandler"
         android:text="@string/buttonPlus"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="32sp"
@@ -276,7 +277,7 @@
         android:id="@+id/button_point"
         style="?android:buttonBarButtonStyle"
         android:background="@android:color/background_light"
-        android:onClick="point"
+        android:onClick="symbolHandler"
         android:text="@string/buttonPoint"
         android:textColor="@android:color/black"
         android:textSize="32sp"
