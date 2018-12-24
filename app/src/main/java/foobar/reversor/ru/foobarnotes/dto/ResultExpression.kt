@@ -1,4 +1,4 @@
 package foobar.reversor.ru.foobarnotes.dto
 
-data class ResultExpression(val expression: String, val result: Double) {
+data class ResultExpression(val expression: String, val result: Double, val timestamp: Long) {
 }
