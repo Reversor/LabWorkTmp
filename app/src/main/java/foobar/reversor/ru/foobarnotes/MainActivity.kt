@@ -95,7 +95,7 @@ class MainActivity : AppCompatActivity() {
         input.clear()
     }
 
-    fun evaluate(expression: String): BigDecimal {
+    private fun evaluate(expression: String): BigDecimal {
         val evaluationalExpression = Expression(expression, MathContext.DECIMAL64)
         evaluationalExpression.addOperator(Divide())
         evaluationalExpression.addOperator(Multiply())
@@ -104,9 +104,7 @@ class MainActivity : AppCompatActivity() {
         try {
             val bigDecimal = evaluationalExpression.eval()
             return bigDecimal
-        } catch (e: ExpressionException) {
-            return BigDecimal.ZERO
-        } catch (e: NumberFormatException) {
+        } catch (e: Exception) {
             return BigDecimal.ZERO
         }
     }
