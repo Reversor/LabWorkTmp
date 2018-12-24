@@ -24,6 +24,9 @@ class DbHelper(context: Context?, name: String?, factory: SQLiteDatabase.CursorF
 
     }
 
+    fun clearTable() = 0 < this.writableDatabase.delete(table_name, null, null)
+
+
     fun insert(resultExpression: ResultExpression) = this.writableDatabase.insert(
         table_name,
         null,

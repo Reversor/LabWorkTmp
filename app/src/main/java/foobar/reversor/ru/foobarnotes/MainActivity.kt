@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
 import android.view.View
+import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.udojava.evalex.AbstractOperator
@@ -55,6 +56,11 @@ class MainActivity : AppCompatActivity() {
             setHasFixedSize(true)
             layoutManager = viewManager
             adapter = viewAdapter
+        }
+        findViewById<Button>(R.id.button_с).setOnLongClickListener { v: View? ->
+            results.clear()
+            viewAdapter.notifyDataSetChanged()
+            dbHelper.clearTable()
         }
     }
 
