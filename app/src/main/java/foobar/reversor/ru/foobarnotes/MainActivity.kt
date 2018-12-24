@@ -10,7 +10,6 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import com.udojava.evalex.Expression
-import com.udojava.evalex.Expression.ExpressionException
 import foobar.reversor.ru.foobarnotes.adapters.ResultExpressionAdapter
 import foobar.reversor.ru.foobarnotes.dto.ResultExpression
 import foobar.reversor.ru.foobarnotes.operators.Divide
@@ -102,8 +101,7 @@ class MainActivity : AppCompatActivity() {
         evaluationalExpression.addOperator(Minus())
         evaluationalExpression.addOperator(Plus())
         try {
-            val bigDecimal = evaluationalExpression.eval()
-            return bigDecimal
+            return evaluationalExpression.eval()
         } catch (e: Exception) {
             return BigDecimal.ZERO
         }
